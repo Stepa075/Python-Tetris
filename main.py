@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 from copy import deepcopy
 from random import choice, randrange
@@ -39,7 +41,7 @@ title_tetris = main_font.render('TETRIS', True, pygame.Color('darkorange'))
 title_score = font.render('score:', True, pygame.Color('green'))
 title_record = font.render('record:', True, pygame.Color('purple'))
 
-get_color = lambda : (randrange(30, 256), randrange(30, 256), randrange(30, 256))
+get_color = lambda: (randrange(30, 256), randrange(30, 256), randrange(30, 256))
 
 figure, next_figure = deepcopy(choice(figures)), deepcopy(choice(figures))
 color, next_color = get_color(), get_color()
@@ -83,7 +85,7 @@ while True:
     # control
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            exit()
+            sys. exit()#exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 dx = -1
